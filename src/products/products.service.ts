@@ -24,8 +24,9 @@ export class ProductsService {
 					throw new ConflictException(`Product with name ${createProductDto.name} already exists`)
 				}
 			}
+			throw new InternalServerErrorException('An error occurred while creating the product');
 		}
-		throw new InternalServerErrorException();
+		
 	}
 
 	findAll() {
